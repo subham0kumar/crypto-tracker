@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Component, useState } from "react";
 import {
   Button,
   Fade,
@@ -8,6 +8,7 @@ import {
   AppBar,
   Tab,
   Tabs,
+  useMediaQuery,
 } from "@mui/material";
 import Login from "./Login";
 import Signup from "./Signup";
@@ -16,7 +17,10 @@ import GoogleButton from "react-google-button";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../../firebase";
 import { CryptoState } from "../../CryptoContext";
+import { AiOutlineLogin } from "react-icons/ai";
+import { WrapTextRounded } from "@mui/icons-material";
 
+// <------------Styles--------------->
 const useStyle = makeStyles()((theme) => {
   return {
     modal: {
@@ -25,10 +29,13 @@ const useStyle = makeStyles()((theme) => {
       left: "50%",
       transform: "translate(-50%, -50%)",
       width: 400,
+      [theme.breakpoints.down("md")]: {
+        width: '90vw',
+      },
       backgroundColor: "#303030",
       boxShadow: 24,
       borderRadius: 12,
-      border: "2px solid gold ",
+      // border: "2px solid gold ",
       p: 4,
       color: "white",
     },
@@ -50,11 +57,15 @@ export default function AuthModal() {
   const { setAlert } = CryptoState();
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const { classes } = useStyle();
+  const googleProvider = new GoogleAuthProvider();
+  const breakPoint = useMediaQuery("(max-width: 460px)");
+  
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  const googleProvider = new GoogleAuthProvider();
+// <-------------Google SignIn----------------->
   const signInWithGoogle = () => {
     signInWithPopup(auth, googleProvider)
       .then((res) => {
@@ -74,22 +85,21 @@ export default function AuthModal() {
         return;
       });
   };
-  const { classes } = useStyle();
-
+// <-------------return Component render--------------->
   return (
     <div>
-      <Button
+       <Button
         variant="contained"
         style={{
-          width: 85,
-          height: 40,
-          marginLeft: 15,
+          width: WrapTextRounded,
+          height: 37,
+          padding: 10,
           backgroundColor: "#EEBC1D",
           fontWeight: "bold",
         }}
         onClick={handleOpen}
       >
-        LOG IN
+       {breakPoint? <AiOutlineLogin size={'2em'} />: "LOG IN"}
       </Button>
       <Modal
         aria-labelledby="transition-modal-title"

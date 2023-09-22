@@ -7,6 +7,7 @@ import {
   Toolbar,
   Typography,
   createTheme,
+  useMediaQuery,
 } from "@mui/material";
 // import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -14,6 +15,7 @@ import { makeStyles } from "tss-react/mui";
 import { CryptoState } from "../CryptoContext";
 import AuthModal from "./Authentication/AuthModal";
 import UserSidebar from "./Authentication/UserSidebar";
+import { WrapText } from "@mui/icons-material";
 
 const Header = () => {
   
@@ -29,6 +31,7 @@ const Header = () => {
     };
   });
 
+  const breakPoint = useMediaQuery("(max-width: 600px)");
   const navigate = useNavigate();
   const { classes } = useStyles();
   
@@ -46,20 +49,20 @@ const Header = () => {
         <Container>
           <Toolbar>
             <Typography variant="h6" onClick={() => navigate("/")} className={classes.title}>
-              Crypto-Tracker
+              {breakPoint? "C_T" : "Crypto-Tracker"}
             </Typography>
             <Select
               variant="outlined"
               style={{
                 marginRight: 15,
-                width: 100,
+                width: WrapText,
                 height: 40,
               }}
               value={currency}
               onChange={(e) => setCurrency(e.target.value)}
             >
-              <MenuItem value={"INR"}>INR</MenuItem>
-              <MenuItem value={"USD"}>USD</MenuItem>
+              <MenuItem value={"INR"}>{breakPoint? "₹":"INR"}</MenuItem>
+              <MenuItem value={"USD"}>{breakPoint? "$":"USD"}</MenuItem>
             </Select>
             {user? <UserSidebar /> : <AuthModal />}
           </Toolbar>

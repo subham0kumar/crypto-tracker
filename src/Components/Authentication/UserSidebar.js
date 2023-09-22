@@ -5,12 +5,15 @@ import { makeStyles } from "tss-react/mui";
 import { signOut } from "firebase/auth";
 import { auth, db } from "../../firebase";
 import { numberWithCommas } from "../Banner/Carousel";
-import { AiFillDelete } from "react-icons/ai";
+import { AiFillDelete, AiOutlineClose } from "react-icons/ai";
 import { doc, setDoc } from "firebase/firestore";
 
 const useStyle = makeStyles()((theme) => {
   return {
     container: {
+      [theme.breakpoints.down("md")]: {
+        width: "90vw",
+      },
       width: 350,
       padding: 25,
       height: "100%",
@@ -41,6 +44,9 @@ const useStyle = makeStyles()((theme) => {
       fontWeight: "bolder",
     },
     watchlist: {
+      [theme.breakpoints.down("md")]: {
+        width: "80vw",
+      },
       flex: 1,
       width: "100%",
       backgroundColor: "grey",
@@ -86,7 +92,7 @@ export default function UserSidebar() {
 
     setState({ ...state, [anchor]: open });
   };
-
+  // <---------------removeFromWatchlist function-------------->
   const removeFromWatchlist = async (coin) => {
     const coinRef = doc(db, "watchlist", user.uid);
     try {
@@ -111,7 +117,7 @@ export default function UserSidebar() {
       });
     }
   };
-
+  // <------------------logout function--------------->
   const logOut = () => {
     signOut(auth);
     setAlert({
@@ -122,7 +128,7 @@ export default function UserSidebar() {
 
     toggleDrawer();
   };
-
+  // <-----------------return component render----------------->
   return (
     <div>
       {["right"].map((anchor) => (
@@ -144,6 +150,7 @@ export default function UserSidebar() {
             onClose={toggleDrawer(anchor, false)}
           >
             <div className={classes.container}>
+              <AiOutlineClose size={'2em'} onClick={toggleDrawer(anchor, false) } />
               <div className={classes.profile}>
                 <Avatar
                   className={classes.picture}
