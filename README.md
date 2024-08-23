@@ -1,4 +1,39 @@
-# Try the Live webApp on: https://crypto-tracker-subham0kumar.netlify.app
+# Crypto Tracker
+
+## Description
+
+Crypto Tracker is a web application designed to help users monitor the latest values of their favorite cryptocurrencies. Users can add cryptocurrencies to their watchlist, track trends through graph representations, and manage their accounts with secure login and sign-up features, including Google Sign-In through Firebase authentication.
+
+## Features
+
+- **Browse Cryptocurrencies**: Search and view the latest values of various cryptocurrencies.
+- **Watchlist**: Add your favorite cryptocurrencies to a personalized watchlist.
+- **Firebase Authentication**: Secure login and sign-up features, including Google Sign-In.
+- **Trend Graphs**: Visual representation of the price trends for selected cryptocurrencies.
+
+## Live Site
+
+Visit the live site at: [https://crypto-tracker-subham0kumar.netlify.app/](https://crypto-tracker-subham0kumar.netlify.app/)
+
+## Technologies Used
+
+- **ReactJS**
+- **HTML**
+- **CSS**
+- **JavaScript**
+- **Material UI**
+
+## Additional Information
+
+### Future Goals
+- **Backend Integration**: Implement a larger database for storing user data and cryptocurrency information.
+- **Payment Gateway**: Enable transactions directly within the app.
+- **Wallets & Trade Feature**: Add functionality for users to manage wallets and trade cryptocurrencies.
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -27,45 +62,3 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
