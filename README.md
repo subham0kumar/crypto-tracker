@@ -1,4 +1,7 @@
 # Crypto Tracker
+## Live Site
+
+Visit the live site at: [https://crypto-tracker-subham0kumar.netlify.app/](https://crypto-tracker-subham0kumar.netlify.app/)
 
 ## Description
 
@@ -11,9 +14,6 @@ Crypto Tracker is a web application designed to help users monitor the latest va
 - **Firebase Authentication**: Secure login and sign-up features, including Google Sign-In.
 - **Trend Graphs**: Visual representation of the price trends for selected cryptocurrencies.
 
-## Live Site
-
-Visit the live site at: [https://crypto-tracker-subham0kumar.netlify.app/](https://crypto-tracker-subham0kumar.netlify.app/)
 
 ## Technologies Used
 
