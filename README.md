@@ -1,7 +1,7 @@
 # Crypto Tracker
 ## Live Site
 
-Visit the live site at: [https://crypto-tracker-subham0kumar.netlify.app/](https://crypto-tracker-subham0kumar.netlify.app/)
+# Visit the live site at: [https://crypto-tracker-subham0kumar.netlify.app/](https://crypto-tracker-subham0kumar.netlify.app/)
 
 ## Description
 
