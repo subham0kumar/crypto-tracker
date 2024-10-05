@@ -39,6 +39,16 @@ const CoinInfo = ({ coin }) => {
     palette: {
       mode: "dark",
     },
+    // components: {
+    //   MuiCssBaseline: {
+    //     styleOverrides: {
+    //       body: {
+    //         backgroundColor: '#FAACA8',
+    //         backgroundImage: `linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%)`,
+    //       },
+    //     },
+    //   },
+    // }
   });
 
   const useStyles = makeStyles()((theme) => {
@@ -51,6 +61,8 @@ const CoinInfo = ({ coin }) => {
         justifyContent: "center",
         marginTop: 25,
         padding: 40,
+        // backgroundColor: "#FAACA8",
+        // backgroundImage: `linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%)`,
         [theme.breakpoints.down("md")]: {
           width: "90%",
           marginTop: 30,
@@ -68,7 +80,7 @@ const CoinInfo = ({ coin }) => {
       <div className={classes.container}>
         {!historicalData ? (
           <CircularProgress
-            style={{ color: "gold" }}
+            style={{ color: "#d9a8dd" }}
             size={250}
             thickness={1}
           />
@@ -90,7 +102,7 @@ const CoinInfo = ({ coin }) => {
                   {
                     data: historicalData.map((coin) => coin[1]),
                     label: `Price ( Past ${days} Days) in ${currency}`,
-                    borderColor: "#EEBC1D",
+                    borderColor: "#d9a8dd",
                   },
                 ],
               }}
@@ -102,15 +114,17 @@ const CoinInfo = ({ coin }) => {
                 },
               }}
             />
-            <div style={{
-              display: "flex",
-              marginTop: 20,
-              justifyContent: "space-around",
-              width: "100%",
-            }}>
-              {chartDays.map(day => (
+            <div
+              style={{
+                display: "flex",
+                marginTop: 20,
+                justifyContent: "space-around",
+                width: "100%",
+              }}
+            >
+              {chartDays.map((day) => (
                 <SelectButton
-                  key = {day.value}
+                  key={day.value}
                   onClick={() => setDays(day.value)}
                   selected={day.value === days}
                 >

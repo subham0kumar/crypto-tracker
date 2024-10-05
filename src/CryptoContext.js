@@ -34,22 +34,21 @@ const CryptoContext = ({ children }) => {
   };
 
   useEffect(() => {
-    if(user) {
-      const coinRef = doc(db, 'watchlist', user?.uid);
+    if (user) {
+      const coinRef = doc(db, "watchlist", user?.uid);
 
       var unsubscribe = onSnapshot(coinRef, (coin) => {
-        if(coin.exists()) {
+        if (coin.exists()) {
           setWatchlist(coin.data().coins);
-        }else{
-          console.log('No items in the watchlist!');
+        } else {
+          console.log("No items in the watchlist!");
         }
       });
       return () => {
         unsubscribe();
-      }
-    };
-  },[user])
-
+      };
+    }
+  }, [user]);
 
   // <---------------------- Auth UseEffect -------------------->
 

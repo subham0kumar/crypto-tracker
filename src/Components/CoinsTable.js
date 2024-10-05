@@ -1,6 +1,6 @@
-import axios from "axios";
+// import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { CoinList } from "../config/api";
+// import { CoinList } from "../config/api";
 import { CryptoState } from "../CryptoContext";
 import {
   Container,
@@ -21,9 +21,7 @@ import { useNavigate } from "react-router-dom";
 import { makeStyles } from "tss-react/mui";
 import { numberWithCommas } from "./Banner/Carousel";
 
-
 //---------------------START---------------------------------//
-
 
 const CoinsTable = () => {
   // const [coins, setCoins] = useState([]);
@@ -36,21 +34,21 @@ const CoinsTable = () => {
   const useStyles = makeStyles()((theme) => {
     return {
       row: {
-        backgroundColor: "#16171a",
+        backgroundColor: "#384a80",
         cursor: "pointer",
         "&:hover": {
-          backgroundColor: "#131111",
+          backgroundColor: "#5d6b94",
         },
         fontFamily: "monospace",
       },
       pagination: {
         "& .MuiPaginationItem-root": {
-          color: "gold",
+          color: "#d9a8dd",
         },
       },
     };
   });
-  const  {classes}   = useStyles();
+  const { classes } = useStyles();
 
   // const fetchCoins = async () => {
   //   setLoading(true);
@@ -72,6 +70,15 @@ const CoinsTable = () => {
   const darkTheme = createTheme({
     palette: {
       mode: "dark",
+      primary: {
+        main: "#D809C1",
+      },
+      secondary: {
+        main: "#574f7d",
+      },
+      primaryLight: {
+        main: "#ffffff",
+      },
     },
   });
 
@@ -93,17 +100,19 @@ const CoinsTable = () => {
           Cryptocurrency Prices by Market Cap
         </Typography>
         <TextField
+          // sx={{ input: { color: "#e0f0ea" } }}
           label="Search"
           variant="outlined"
+          color="primaryLight"
           style={{ marginBottom: 20, width: "100%" }}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <TableContainer>
+        <TableContainer color="primary">
           {loading ? (
-            <LinearProgress style={{ backgroundColor: "gold" }} />
+            <LinearProgress style={{ backgroundColor: "#e0f0ea" }} />
           ) : (
             <Table>
-              <TableHead style={{ backgroundColor: "#EEBC1D" }}>
+              <TableHead style={{ backgroundColor: "#d9a8dd" }}>
                 <TableRow>
                   {["Coin", "Price", "24h Change", "Market Cap"].map((head) => (
                     <TableCell
@@ -199,7 +208,7 @@ const CoinsTable = () => {
           count={(handleSearch()?.length / 10).toFixed(0)}
           onChange={(_, value) => {
             setPage(value);
-            window.scroll(0,459);
+            window.scroll(0, 459);
           }}
         />
       </Container>

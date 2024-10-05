@@ -15,6 +15,7 @@ const useStyle = makeStyles()((theme) => {
         width: "90vw",
       },
       width: 350,
+      background: 'linear-gradient(180deg, rgba(87,79,125,1) 0%, rgba(15,12,41,1) 100%)',
       padding: 25,
       height: "100%",
       display: "flex",
@@ -33,13 +34,14 @@ const useStyle = makeStyles()((theme) => {
       width: 200,
       height: 200,
       cursor: "pointer",
-      backgroundColor: "#EA9406",
+      backgroundColor: "#d9a8dd",
       objectFit: "contain",
     },
     logout: {
       height: "8%",
       width: "100%",
-      backgroundColor: "#EA9406",
+      color: "white",
+      backgroundColor: "#384a80",
       marginTop: 20,
       fontWeight: "bolder",
     },
@@ -49,7 +51,7 @@ const useStyle = makeStyles()((theme) => {
       },
       flex: 1,
       width: "100%",
-      backgroundColor: "grey",
+      backgroundColor: "#384a80",
       borderRadius: 10,
       padding: 15,
       paddingTop: 10,
@@ -62,12 +64,12 @@ const useStyle = makeStyles()((theme) => {
     coin: {
       padding: 10,
       borderRadius: 5,
-      color: "black",
+      color: "white",
       width: "100%",
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
-      backgroundColor: "#EEBC1D",
+      backgroundColor: "#5d6b94",
       boxShadow: "0 0 3px black",
     },
   };
@@ -139,7 +141,7 @@ export default function UserSidebar() {
               height: 38,
               width: 38,
               cursor: "pointer",
-              backgroundColor: "#EA9406",
+              backgroundColor: "#d9a8dd",
             }}
             src={user.photoURL}
             alt={user.displayName || user.email}
@@ -172,7 +174,7 @@ export default function UserSidebar() {
                   <span style={{ fontSize: 15, textShadow: "0 0 5px black" }}>
                     WatchList
                   </span>
-                  {/* {console.log(coins)} */}
+                  {console.log(coins)}
                   {coins.map((coin) => {
                     if (watchlist.includes(coin.id))
                       return (

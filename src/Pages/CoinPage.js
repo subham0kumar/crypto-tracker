@@ -116,7 +116,7 @@ const CoinPage = () => {
 
   const { classes } = useStyles();
 
-  if (!coin) return <LinearProgress style={{ backgroundColor: "gold" }} />;
+  if (!coin) return <LinearProgress style={{ backgroundColor: "#d9a8dd" }} />;
 
   return (
     <div className={classes.container}>
@@ -134,7 +134,8 @@ const CoinPage = () => {
           {coin?.description.en.split(". ")[0]}.
         </Typography>
         <div className={classes.marketData}>
-          {/*---------------------------- Rank Span --------------------------------------- */}
+          {/*------------------------------ Rank Span ------------------------------------------ */}
+
           <span style={{ display: "flex" }}>
             <Typography variant="h5" className={classes.heading}>
               Rank:{" "}
@@ -145,7 +146,7 @@ const CoinPage = () => {
             </Typography>
           </span>
 
-          {/*---------------------------- Current Price Span -------------------------------- */}
+          {/*------------------------------ Current Price Span -------------------------------------- */}
           <span style={{ display: "flex" }}>
             <Typography variant="h5" className={classes.heading}>
               Current price:{" "}
@@ -159,7 +160,7 @@ const CoinPage = () => {
             </Typography>
           </span>
 
-          {/*---------------------------- Market Cap Span ------------------------------------ */}
+          {/*------------------------------ Market Cap Span ---------------------------------- */}
           <span style={{ display: "flex" }}>
             <Typography variant="h5" className={classes.heading}>
               Market Cap:{" "}
@@ -175,7 +176,8 @@ const CoinPage = () => {
               M
             </Typography>
           </span>
-          {/*---------------------------- Add to Watchlist button ------------------------------------ */}
+
+          {/*----------------------- Add to Watchlist button --------------------------------- */}
           {user && (
             <Button
               variant="outlined"
@@ -183,8 +185,8 @@ const CoinPage = () => {
                 margin: 10,
                 width: "100%",
                 height: 40,
-                color: "black",
-                backgroundColor: inWatchlist ? "#ff0000" : "#EA9406",
+                color: inWatchlist ? "white" : "black",
+                backgroundColor: inWatchlist ? "#fa007d" : "#d9a8dd",
                 fontWeight: "bolder",
               }}
               onClick={inWatchlist ? removeFromWatchlist : addToWatchlist}

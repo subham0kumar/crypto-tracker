@@ -19,6 +19,7 @@ import { auth } from "../../firebase";
 import { CryptoState } from "../../CryptoContext";
 import { AiOutlineLogin } from "react-icons/ai";
 import { WrapTextRounded } from "@mui/icons-material";
+import { hover } from "@testing-library/user-event/dist/hover";
 
 // <------------Styles--------------->
 const useStyle = makeStyles()((theme) => {
@@ -30,12 +31,12 @@ const useStyle = makeStyles()((theme) => {
       transform: "translate(-50%, -50%)",
       width: 400,
       [theme.breakpoints.down("md")]: {
-        width: '90vw',
+        width: "90vw",
       },
-      backgroundColor: "#303030",
+      background: 'linear-gradient(180deg, rgba(15,12,41,1) 0%, rgba(87,79,125,1) 100%)',
       boxShadow: 24,
       borderRadius: 12,
-      // border: "2px solid gold ",
+      border: "2px solid #d9a8dd ",
       p: 4,
       color: "white",
     },
@@ -60,12 +61,12 @@ export default function AuthModal() {
   const { classes } = useStyle();
   const googleProvider = new GoogleAuthProvider();
   const breakPoint = useMediaQuery("(max-width: 460px)");
-  
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-// <-------------Google SignIn----------------->
+  // <-------------Google SignIn----------------->
   const signInWithGoogle = () => {
     signInWithPopup(auth, googleProvider)
       .then((res) => {
@@ -85,21 +86,22 @@ export default function AuthModal() {
         return;
       });
   };
-// <-------------return Component render--------------->
+  // <-------------return Component render--------------->
   return (
     <div>
-       <Button
+      <Button
         variant="contained"
         style={{
           width: WrapTextRounded,
           height: 37,
           padding: 10,
-          backgroundColor: "#EEBC1D",
+          color: "#fbedfc",
+          backgroundColor: "#384a80",
           fontWeight: "bold",
         }}
         onClick={handleOpen}
       >
-       {breakPoint? <AiOutlineLogin size={'2em'} />: "LOG IN"}
+        {breakPoint ? <AiOutlineLogin size={"2em"} /> : "LOG IN"}
       </Button>
       <Modal
         aria-labelledby="transition-modal-title"
@@ -120,21 +122,21 @@ export default function AuthModal() {
             <AppBar
               position="static"
               style={{
-                backgroundColor: "transparent",
-                color: "white",
+                background: "transparent",
+                color: "#d9a8dd",
               }}
             >
               <Tabs
                 value={value}
                 onChange={handleChange}
                 variant="fullWidth"
-                TabIndicatorProps={{ style: { backgroundColor: "#EA9406" } }}
+                TabIndicatorProps={{ style: { backgroundColor: "#d9a8dd" } }}
                 style={{
                   borderRadius: 5,
                 }}
               >
-                <Tab style={{ color: "#EA9406" }} label="Log In" />
-                <Tab style={{ color: "#EA9406" }} label="Sign Up" />
+                <Tab style={{ color: "#d9a8dd" }} label="Log In" />
+                <Tab style={{ color: "#d9a8dd" }} label="Sign Up" />
               </Tabs>
             </AppBar>
 

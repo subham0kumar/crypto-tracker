@@ -21,9 +21,12 @@ const Header = () => {
   
   const useStyles = makeStyles()((theme) => {
     return {
+      appBar:{
+        backgroundColor: "#384a80",
+      },
       title: {
         flex: 1,
-        color: "gold",
+        color: "#fbedfc",
         cursor: "pointer",
         fontFamily: "monospace",
         fontWeight: "bold",
@@ -39,13 +42,13 @@ const Header = () => {
   // console.log(currency)
   const darkTheme = createTheme({
     palette: {
-        mode: "dark",
-    }, 
+      mode: "dark",
+    },
   });
   
   return (
     <ThemeProvider theme={darkTheme}>
-      <AppBar color="transparent" position="static">
+      <AppBar className={classes.appBar} position="static">
         <Container>
           <Toolbar>
             <Typography variant="h6" onClick={() => navigate("/")} className={classes.title}>

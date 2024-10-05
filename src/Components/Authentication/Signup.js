@@ -29,15 +29,14 @@ const Signup = ({ handleClose }) => {
       setAlert({
         open: true,
         message: `Sign Up Successful. Welcome ${result.user.email}`,
-        type: 'success',
+        type: "success",
       });
       handleClose();
     } catch (error) {
-
       setAlert({
         open: true,
         message: error.message,
-        type: 'error',
+        type: "error",
       });
       return;
     }
@@ -86,7 +85,11 @@ const Signup = ({ handleClose }) => {
       <Button
         variant="contained"
         size="large"
-        style={{ backgroundColor: "#EA9406", fontWeight: "bold" }}
+        style={{
+          color: "white",
+          backgroundColor: "#384a80",
+          fontWeight: "bold",
+        }}
         onClick={handleSubmit}
       >
         Sign Up
